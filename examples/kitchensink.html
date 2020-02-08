@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Fomantic-UI Vue Kitchen Sink Test</title>
+		<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.3/dist/semantic.min.css'>
+	</head>
+	<body>
+		<div id='root'>
+			<fui-segment>
+				<fui-container>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-emoji&gt;</span></code> - States</h1>
+						<fui-emoji disabled name="b"></fui-emoji>
+						<fui-emoji loading name="b"></fui-emoji>
+						<fui-emoji link name="b"></fui-emoji>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-emoji&gt;</span></code> - Sizes</h1>
+						<fui-emoji v-for="size in emojiSizes" :key="size" :size="size" name="b"></fui-emoji>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-flag&gt;</span></code></h1>
+						<fui-flag v-for="country in countries" :key="country" :country="country.toLowerCase()"></fui-flag>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code></h1>
+						<fui-segment>
+							<placeholder></placeholder>
+							<div class="ui active dimmer">
+								<fui-loader active></fui-loader>
+							</div>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code> - Inline & Centered Inline</h1>
+						<fui-loader active inline></fui-loader>
+						<fui-loader active centered inline></fui-loader>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code> - Colors</h1>
+						<fui-loader active v-for="color in colors" :key="color" :color="color" inline></fui-loader>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code> - Text</h1>
+						<fui-segment>
+							<placeholder></placeholder>
+							<div class="ui active dimmer">
+								<fui-loader active text="Testing Text"></fui-loader>
+							</div>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code> - Indeterminate</h1>
+						<fui-segment>
+							<placeholder></placeholder>
+							<div class="ui active dimmer">
+								<fui-loader active indeterminate text="Indeterminate Loader"></fui-loader>
+							</div>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code> - Sizes</h1>
+						<fui-segment v-for="size in sizes" :key="size">
+							<placeholder></placeholder>
+							<div class="ui active dimmer">
+								<fui-loader active text="Loading..." :size="size"></fui-loader>
+							</div>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-loader&gt;</span></code> - Styles</h1>
+
+						<strong>Double</strong>
+						<fui-segment>
+							<placeholder></placeholder>
+							<div class="ui active dimmer">
+								<fui-loader active double></fui-loader>
+							</div>
+						</fui-segment>
+
+						<strong>Elastic</strong>
+						<fui-segment>
+							<placeholder></placeholder>
+							<div class="ui active dimmer">
+								<fui-loader active elastic></fui-loader>
+							</div>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Placeholder</h1>
+						<fui-segment placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment style="z-index: 0;">
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Piled</h1>
+						<fui-segment piled>
+							<placeholder></placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Loading</h1>
+						<fui-segment color="red" loading="double">
+							<placeholder></placeholder>
+						</fui-segment>
+
+						<fui-segment color="red" :loading="true">
+							<placeholder></placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Raised</h1>
+						<fui-segment raised>
+							<placeholder></placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Stacked</h1>
+						<fui-segment stacked>
+							<placeholder></placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Attached</h1>
+						<fui-segment attached="top">
+							<placeholder></placeholder>
+						</fui-segment>
+						<fui-segment attached="bottom">
+							<placeholder></placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-segment&gt;</span></code> - Inverted</h1>
+						<fui-segment inverted>
+							<placeholder inverted></placeholder>
+						</fui-segment>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-image&gt;</span></code></h1>
+
+						<strong>With Slot</strong>
+						<fui-image size="medium">
+							<img src="./images/beach.jpg" alt="beach" />
+						</fui-image>
+
+						<strong>With SRC</strong>
+						<fui-image src="./images/beach.jpg" alt="beach" size="medium"></fui-image>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-image&gt;</span></code> - Spaced</h1>
+						<p><fui-image size="mini" spaced="right" src="./images/beach.jpg"></fui-image>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
+						<p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.<fui-image size="mini" spaced="left" src="./images/beach.jpg"></fui-image></p>
+					</fui-segment>
+					<fui-segment>
+						<h1><code><span class="ui blue text">&lt;fui-image&gt;</span></code> - Floated</h1>
+						<fui-segment>
+							<fui-image size="small" floated="left" src="./images/beach.jpg"></fui-image>
+							<p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
+							<fui-image size="small" floated="right" src="./images/beach.jpg"></fui-image>
+							<p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum maiestatis in.</p>
+							<p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
+						</fui-segment>
+					</fui-segment>
+				</fui-container>
+			</div>
+		</div>
+
+		<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+		<script type='text/javascript' src='../dist/fomantic-ui-vue.umd.js'></script>
+		<script type='text/javascript'>
+			Vue.component('placeholder', {
+				template: `<div :class="{ui: true, inverted: this.inverted, placeholder: true}"><div v-for="i in [1, 2, 3, 4]" :key="i" class="line"></div></div>`,
+				name: 'Placeholder',
+				props: {
+					inverted: Boolean,
+				}
+			});
+
+			const app = new Vue({
+				el: '#root',
+				data: {
+					emojiSizes: ['small', 'medium', 'large', 'big'],
+					colors: ['red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'],
+					sizes: ['mini', 'tiny', 'small', 'medium', 'large', 'big', 'huge', 'massive'],
+					countries: ["AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BQ","BA","BW","BV","BR","IO","BN","BG","BF","BI","CV","KH","CM","CA","KY","CF","TD","CL","CN","CX","CC","CO","KM","CD","CG","CK","CR","HR","CU","CW","CY","CZ","CI","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GG","GN","GW","GY","HT","HM","VA","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM","NA","NR","NP","NL","NC","NZ","NI","NE","NG","NU","NF","MP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","MK","RO","RU","RW","RE","BL","SH","KN","LC","MF","PM","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SX","SK","SI","SB","SO","ZA","GS","SS","ES","LK","SD","SR","SJ","SE","CH","SY","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","UM","US","UY","UZ","VU","VE","VN","VG","VI","WF","EH","YE","ZM","ZW","AX"],
+				},
+			});
+		</script>
+	</body>
+</html>
