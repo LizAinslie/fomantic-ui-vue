@@ -3,9 +3,8 @@
 	"version": "0.0.1",
 	"private": false,
 	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"build-bundle": "vue-cli-service build --target lib --name fomantic-ui-vue ./src/index.js",
+		"dev": "vue-cli-service build --target lib --name fomantic-ui-vue --watch ./src/index.js",
+		"build": "vue-cli-service build --target lib --name fomantic-ui-vue ./src/index.js",
 		"lint": "vue-cli-service lint"
 	},
 	"main": "./dist/fomantic-ui-vue.common.js",
