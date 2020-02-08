@@ -1,7 +1,5 @@
 .DS_Store
 node_modules
-/dist
-!/dist/fomantic-ui-vue.umd.js
 
 # local env files
 .env.local
